@@ -11,6 +11,8 @@
 		7CDEB25E20FB838300356206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CDEB25D20FB838300356206 /* Assets.xcassets */; };
 		7CDEB26120FB838300356206 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDEB25F20FB838300356206 /* MainMenu.xib */; };
 		7CDEB26420FB838300356206 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEB26320FB838300356206 /* main.m */; };
+		7CDEB27120FBB6C400356206 /* PositionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEB26F20FBB6C400356206 /* PositionWindowController.m */; };
+		7CDEB27220FBB6C400356206 /* PositionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDEB27020FBB6C400356206 /* PositionWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		7CDEB26220FB838300356206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDEB26320FB838300356206 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CDEB26520FB838300356206 /* WindowsAndViewsExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WindowsAndViewsExample.entitlements; sourceTree = "<group>"; };
+		7CDEB26E20FBB6C400356206 /* PositionWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PositionWindowController.h; sourceTree = "<group>"; };
+		7CDEB26F20FBB6C400356206 /* PositionWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PositionWindowController.m; sourceTree = "<group>"; };
+		7CDEB27020FBB6C400356206 /* PositionWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,9 @@
 			children = (
 				7CDEB25A20FB838200356206 /* AppDelegate.h */,
 				7CDEB25B20FB838200356206 /* AppDelegate.m */,
+				7CDEB26E20FBB6C400356206 /* PositionWindowController.h */,
+				7CDEB26F20FBB6C400356206 /* PositionWindowController.m */,
+				7CDEB27020FBB6C400356206 /* PositionWindow.xib */,
 				7CDEB25D20FB838300356206 /* Assets.xcassets */,
 				7CDEB25F20FB838300356206 /* MainMenu.xib */,
 				7CDEB26220FB838300356206 /* Info.plist */,
@@ -124,6 +132,7 @@
 			files = (
 				7CDEB25E20FB838300356206 /* Assets.xcassets in Resources */,
 				7CDEB26120FB838300356206 /* MainMenu.xib in Resources */,
+				7CDEB27220FBB6C400356206 /* PositionWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDEB27120FBB6C400356206 /* PositionWindowController.m in Sources */,
 				7CDEB26420FB838300356206 /* main.m in Sources */,
 				7CDEB25C20FB838200356206 /* AppDelegate.m in Sources */,
 			);

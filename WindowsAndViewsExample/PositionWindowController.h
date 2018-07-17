@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PositionWindowController : NSWindowController
+@interface PositionWindowController : NSWindowController <NSWindowDelegate>
 
 @end

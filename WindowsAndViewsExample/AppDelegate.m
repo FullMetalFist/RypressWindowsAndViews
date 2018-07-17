@@ -7,16 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import "PositionWindowController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    PositionWindowController *_positionWindowController;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    
+}
+
+- (IBAction)changePosition:(id)sender
+{
+    if (_positionWindowController == nil) {
+        _positionWindowController = [[PositionWindowController alloc] init];
+    }
+    
+    NSWindow *window = _positionWindowController.window;
+    
+    if ([window isVisible])
+    {
+        [window close];
+    } else {
+        [window makeKeyAndOrderFront:self];
+    }
+}
+
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if (returnCode == NSAlertFirstButtonReturn) {
+        // "Save Anyway" button
+        NSLog(@"Accepted");
+    } else if (returnCode == NSAlertSecondButtonReturn) {
+        // "Cancel"
+        NSLog(@"Cancelled");
+    }
 }
 
 

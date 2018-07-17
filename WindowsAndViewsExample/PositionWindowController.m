@@ -14,10 +14,18 @@
 
 @implementation PositionWindowController
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
+- (id)init {
+    self = [super initWithWindowNibName:@"PositionWindow" owner:self];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    NSLog(@"About to close!");
 }
 
 @end

@@ -25,18 +25,16 @@
 
 - (IBAction)changePosition:(id)sender
 {
-    if (_positionWindowController == nil) {
-        _positionWindowController = [[PositionWindowController alloc] init];
-    }
+    NSString *message = @"We don't know how to do this yet";
+    NSString *details = @"Sorry, we can't change this position of the box until we've learned about frames.";
     
-    NSWindow *window = _positionWindowController.window;
-    
-    if ([window isVisible])
-    {
-        [window close];
-    } else {
-        [window makeKeyAndOrderFront:self];
-    }
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle: @"Accept"];
+    [alert addButtonWithTitle: @"Cancel"];
+    [alert setMessageText: message];
+    [alert setInformativeText: details];
+    [alert setAlertStyle: NSAlertStyleCritical];
+    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
 
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {

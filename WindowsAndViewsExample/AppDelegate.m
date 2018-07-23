@@ -25,32 +25,28 @@
 
 - (IBAction)changePosition:(id)sender
 {
-    NSString *message = @"We don't know how to do this yet";
-    NSString *details = @"Sorry, we can't change this position of the box until we've learned about frames.";
-    
-    NSAlert *alert = [[NSAlert alloc] init];
-    [alert addButtonWithTitle: @"Accept"];
-    [alert addButtonWithTitle: @"Cancel"];
-    [alert setMessageText: message];
-    [alert setInformativeText: details];
-    [alert setAlertStyle: NSAlertStyleCritical];
-    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
-}
-
-- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    if (returnCode == NSAlertFirstButtonReturn) {
-        // "Save Anyway" button
-        NSLog(@"Accepted");
-    } else if (returnCode == NSAlertSecondButtonReturn) {
-        // "Cancel"
-        NSLog(@"Cancelled");
+    if (_positionWindowController == nil) {
+        _positionWindowController = [[PositionWindowController alloc] init];
     }
+    
+    [NSApp beginSheet:_positionWindowController
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:)
+          contextInfo:nil];
 }
 
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    PositionWindowController *controller = (PositionWindowController *)sheet.windowController;
+    
+    if (controller.status == NewPositionAccepted)
+    {
+        NSLog(@"Moving box to: (%li, %li)", controller.xPosition, controller.yPosition);
+    } else if (controller.status == NewPositionCanceled) {
+        NSLog(@"Not moving box");
+    }
+    
+    [sheet orderOut:self];
 }
-
 
 @end

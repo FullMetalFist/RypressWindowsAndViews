@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PositionWindowController">
             <connections>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="xPositionTextField" destination="pzm-0j-njx" id="2QN-tK-3G1"/>
+                <outlet property="yPositionTextField" destination="O7M-9S-aI7" id="Nm1-oT-YnY"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -58,20 +60,29 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btH-Zg-ZFP">
-                        <rect key="frame" x="14" y="13" width="81" height="32"/>
+                        <rect key="frame" x="14" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sQU-Qc-vMa">
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sQU-Qc-vMa">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
                         </buttonCell>
+                        <connections>
+                            <action selector="cancel:" target="-2" id="Hkj-wk-FEF"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-2T-naP">
-                        <rect key="frame" x="145" y="13" width="81" height="32"/>
+                        <rect key="frame" x="126" y="13" width="104" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dGd-KX-2Z7">
+                        <buttonCell key="cell" type="push" title="Reposition" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dGd-KX-2Z7">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="reposition:" target="-2" id="4NI-Wd-Jjl"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQO-jz-Bii">
                         <rect key="frame" x="45" y="75" width="46" height="17"/>

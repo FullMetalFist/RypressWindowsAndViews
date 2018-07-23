@@ -23,9 +23,22 @@
     return self;
 }
 
-- (void)windowWillClose:(NSNotification *)notification
-{
-    NSLog(@"About to close!");
+- (void)windowDidLoad {
+    [super windowDidLoad];
+}
+
+- (IBAction)reposition:(id)sender {
+    self.status = NewPositionAccepted;
+    self.xPosition = [self.xPositionTextField integerValue];
+    self.yPosition = [self.yPositionTextField integerValue];
+    
+    [NSApp endSheet:[self window]];
+}
+
+- (IBAction)cancel:(id)sender {
+    self.status = NewPositionCanceled;
+    
+    [NSApp endSheet:[self window]];
 }
 
 @end
